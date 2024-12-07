@@ -1,3 +1,3 @@
-# mi_proyecto
+# TuPrimeraPagina+GarciaRios
 
-Alumno: Juan Ignacio
+Alumno: Juan Ignacio Garcia Rios
