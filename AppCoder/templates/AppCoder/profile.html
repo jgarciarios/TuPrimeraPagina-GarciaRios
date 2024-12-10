@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuario</title>
+</head>
+<body>
+    <h1>Bienvenido, {{ user.username }}</h1>
+    <p><strong>Nombre:</strong> {{ user.first_name }} {{ user.last_name }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+
+    <h2>Información adicional</h2>
+    <p><strong>Bio:</strong> {{ user.profile.bio }}</p> 
+    
+    <a href="{% url 'logout' %}">Cerrar sesión</a> 
+</body>
+</html>

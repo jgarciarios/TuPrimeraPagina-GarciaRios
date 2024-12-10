@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultados de la búsqueda</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+        }
+        section {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Resultados de la Búsqueda</h1>
+    </header>
+    <section>
+        {% if curso %}
+            <h2>Curso encontrado</h2>
+            <p><strong>Nombre del curso:</strong> {{ curso.nombre }}</p>
+            <p><strong>Camada:</strong> {{ curso.camada }}</p>
+        {% else %}
+            <h2>La camada no existe</h2>
+        {% endif %}
+    </section>
+    <footer>
+        <p>&copy; 2024 - Curso de Python - CoderHouse</p>
+    </footer>
+</body>
+</html>

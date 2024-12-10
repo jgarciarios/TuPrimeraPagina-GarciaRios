@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gestión de Formularios</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            margin: 20px 0;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            text-align: center;
+            margin: 30px;
+        }
+        footer {
+            background-color: #f1f1f1;
+            padding: 10px;
+            text-align: center;
+        }
+        .section-content {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        /* Estilos para el formulario de búsqueda */
+        .search-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .search-container input[type="text"] {
+            padding: 8px;
+            width: 250px;
+        }
+        .search-container button {
+            padding: 8px 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .search-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section-content');
+            sections.forEach(section => section.classList.remove('active'));
+            const selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.classList.add('active');
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Nuestra web Intermedia de Django - CoderHouse</h1>
+    </header>
+    <nav>
+        <a href="javascript:void(0);" onclick="showSection('inicio')">Inicio</a>
+        <a href="javascript:void(0);" onclick="showSection('formulario-estudiantes')">Estudiantes</a>
+        <a href="javascript:void(0);" onclick="showSection('formulario-profesores')">Profesores</a>
+        <a href="javascript:void(0);" onclick="showSection('formulario-cursos')">Cursos</a>
+        <a href="javascript:void(0);" onclick="showSection('formulario-entregables')">Entregables</a>
+    </nav>
+    <section>
+        <div id="inicio" class="section-content active">
+            <h2>Bienvenido a nuestra plataforma</h2>
+            <!-- Sección de búsqueda eliminada -->
+        </div>
+
+        <div id="formulario-estudiantes" class="section-content">
+            <h2>Formulario - Agregar Estudiante</h2>
+            <form method="post" action="{% url 'AppCoder:agregar_estudiante' %}">
+
+                {% csrf_token %}
+                <label for="nombre-estudiante">Nombre:</label>
+                <input type="text" id="nombre-estudiante" name="nombre" required>
+                <label for="apellido-estudiante">Apellido:</label>
+                <input type="text" id="apellido-estudiante" name="apellido" required>
+                <label for="email-estudiante">Email:</label>
+                <input type="email" id="email-estudiante" name="email" required>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+
+        <div id="formulario-profesores" class="section-content">
+            <h2>Formulario - Agregar Profesor</h2>
+            <form method="post" action="{% url 'AppCoder:agregar_curso' %}">
+                {% csrf_token %}
+                <label for="nombre-profesor">Nombre:</label>
+                <input type="text" id="nombre-profesor" name="nombre" required>
+                <label for="apellido-profesor">Apellido:</label>
+                <input type="text" id="apellido-profesor" name="apellido" required>
+                <label for="email-profesor">Email:</label>
+                <input type="email" id="email-profesor" name="email" required>
+                <label for="profesion-profesor">Profesión:</label>
+                <input type="text" id="profesion-profesor" name="profesion" required>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+
+        <div id="formulario-cursos" class="section-content">
+            <h2>Formulario - Agregar Curso</h2>
+            NoReverseMatch at /
+            Reverse for 'agregar_curso' not found. 'agregar_curso' is not a valid view function or pattern name.
+            Request Method:	GET
+            Request URL:	http://127.0.0.1:8000/
+            Django Version:	5.1.4
+            Exception Type:	NoReverseMatch
+            Exception Value:	
+            Reverse for 'agregar_curso' not found. 'agregar_curso' is not a valid view function or pattern name.
+            Exception Location:	C:\Users\Usuario\mi_proyecto\venv\lib\site-packages\django\urls\resolvers.py, line 831, in _reverse_with_prefix
+            Raised during:	AppCoder.views.home
+            Python Executable:	C:\Users\Usuario\mi_proyecto\venv\Scripts\python.exe
+            Python Version:	3.10.11
+            Python Path:	
+            ['C:\\Users\\Usuario\\mi_proyecto',
+             'C:\\Program '
+             'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\python310.zip',
+             'C:\\Program '
+             'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\DLLs',
+             'C:\\Program '
+             'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib',
+             'C:\\Users\\Usuario\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0',
+             'C:\\Users\\Usuario\\mi_proyecto\\venv',
+             'C:\\Users\\Usuario\\mi_proyecto\\venv\\lib\\site-packages']
+            Server time:	Tue, 10 Dec 2024 20:50:34 +0000
+            Error during template rendering
+            In template C:\Users\Usuario\mi_proyecto\AppCoder\templates\AppCoder\home.html, error at line 124
+            
+            Reverse for 'agregar_curso' not found. 'agregar_curso' is not a valid view function or pattern name.
+            114	                <label for="email-profesor">Email:</label>
+            115	                <input type="email" id="email-profesor" name="email" required>
+            116	                <label for="profesion-profesor">Profesión:</label>
+            117	                <input type="text" id="profesion-profesor" name="profesion" required>
+            118	                <button type="submit">Enviar</button>
+            119	            </form>
+            120	        </div>
+            121	
+            122	        <div id="formulario-cursos" class="section-content">
+            123	            <h2>Formulario - Agregar Curso</h2>
+            124	            <form method="post" action="{% url 'agregar_curso' %}">
+            125	                {% csrf_token %}
+            126	                <label for="nombre-curso">Nombre del curso:</label>
+            127	                <input type="text" id="nombre-curso" name="nombre" required>
+            128	                <button type="submit">Enviar</button>
+            129	            </form>
+            130	        </div>
+            131	
+            132	        <div id="formulario-entregables" class="section-content">
+            133	            <h2>Formulario - Agregar Entregable</h2>
+            134	            <form method="post" action="{% url 'agregar_entregable' %}">                {% csrf_token %}
+                <label for="nombre-curso">Nombre del curso:</label>
+                <input type="text" id="nombre-curso" name="nombre" required>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+
+        <div id="formulario-entregables" class="section-content">
+            <h2>Formulario - Agregar Entregable</h2>
+            <form method="post" action="{% url 'agregar_entregable' %}">
+                {% csrf_token %}
+                <label for="nombre-entregable">Nombre del entregable:</label>
+                <input type="text" id="nombre-entregable" name="nombre" required>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Django Web</p>
+    </footer>
+</body>
+</html>
